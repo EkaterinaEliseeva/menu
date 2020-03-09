@@ -1,0 +1,70 @@
+.custom-select {
+  height: rem(40);
+  flex-grow: 1;
+  position: relative;
+  margin-right: auto;
+  z-index: 5;
+  background-color: $white;
+
+  &__form {
+    display: flex;
+    position: relative;
+
+    &:hover,
+    &:focus {
+      opacity: 0.6;
+    }
+  }
+
+  &__input {
+    width: rem(70);
+    padding: rem(10);
+    border: none;
+    outline: none;
+    appearance: none;
+    opacity: 0;
+  }
+
+  &__status {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: rem(15);
+    animation: apperance 0.3s;
+  }
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    right: rem(10);
+    width: rem(6);
+    height: rem(9);
+  }
+
+  &__options {
+    animation: apperance 0.2s;
+  }
+
+  &__options li:hover {
+    background: white;
+    outline-color: rgb(77, 144, 254);
+    outline-offset: -2px;
+    outline-style: auto;
+    outline-width: 5px;
+  }
+
+  &__options li:focus {
+    outline-color: rgb(77, 144, 254);
+    outline-offset: -2px;
+    outline-style: auto;
+    outline-width: 5px;
+  }
+
+  &__option {
+    padding: rem(10) rem(15);
+    z-index: 5;
+    background-color: $white;
+    transition: 0.4s;
+  }
+}

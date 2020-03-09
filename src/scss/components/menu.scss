@@ -1,0 +1,80 @@
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  max-height: 100vh;
+  width: auto;
+  padding: rem(32) rem(38) rem(38) rem(38);
+  box-shadow: 0 10px 20px 0 rgba(12, 6, 57, 0.1);
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-color: $white;
+  z-index: 2;
+  min-width: rem(414);
+  animation: apperanceRight 0.4s;
+
+
+  &.search-active {
+    .menu__custom-select {
+      display: none;
+    }
+  }
+
+  &.animation-hidden {
+    animation: hiddenRight 0.4s;
+  }
+
+  &.hidden {
+    display: none;
+  }
+
+
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  &__navigation {
+    width: 100%;
+    margin-top: rem(62);
+  }
+
+  &__close-button {
+    margin-left: auto;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    width: rem(24);
+    height: rem(16);
+    background-color: $white;
+    background-image: url("../img/close-button.svg");
+    background-repeat: no-repeat;
+    font-size: 0;
+  }
+
+  &__contacts {
+    padding-top: rem(20);
+    margin-top: auto;
+    padding-left: rem(15);
+  }
+}
+
+
+@media screen and (max-width: $small) {
+  .menu {
+    width: 100%;
+    min-width: 0;
+    box-shadow: none;
+
+    &__navigation {
+      margin-top: rem(43);
+    }
+  }
+
+}

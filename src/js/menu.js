@@ -17,19 +17,29 @@ const menuItemClickHandler = (evt, selector) => {
   }
 };
 
+const changeActiveClass = (activeItem) => {
+    subMenuItems.forEach(it => {
+        if (it.parentElement !== activeItem && it.parentElement.classList.contains('active')) {
+            it.parentElement.classList.remove('active');
+        }
+    });
+};
+
 const subMenuItemClickHandler = (evt, selector) => {
     let item = evt.target.parentElement;
     let subMenu = item.querySelector(selector);
+    item.classList.toggle('active');
 
     if (subMenu) {
         subMenu.classList.toggle('hidden');
-        item.classList.toggle('active');
+
+        changeActiveClass(item);
 
         subMenuItems.forEach(it=> {
             if (it.parentElement !== item) {
                 const element = it.parentElement.querySelector(selector);
 
-                if (!element.classList.contains('hidden')) {
+                if (element && !element.classList.contains('hidden')) {
                     element.classList.toggle('hidden');
                 }
 

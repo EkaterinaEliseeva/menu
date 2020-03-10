@@ -1,70 +1,71 @@
 .custom-select {
-  height: rem(40);
-  flex-grow: 1;
-  position: relative;
-  margin-right: auto;
-  z-index: 5;
-  background-color: $white;
+  padding-left: rem(15);
 
-  &__form {
+  &__status {
     display: flex;
-    position: relative;
+    align-items: center;
+    transition: all 0.4s;
+    font-size: rem(13);
+
 
     &:hover,
     &:focus {
-      opacity: 0.6;
+      opacity: 0.7;
     }
   }
 
-  &__input {
-    width: rem(70);
-    padding: rem(10);
-    border: none;
-    outline: none;
-    appearance: none;
-    opacity: 0;
-  }
-
-  &__status {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: rem(15);
-    animation: apperance 0.3s;
-  }
-
-  &__button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%) rotate(90deg);
-    right: rem(10);
-    width: rem(6);
-    height: rem(9);
-  }
-
   &__options {
-    animation: apperance 0.2s;
+    margin-top: rem(26);
   }
 
-  &__options li:hover {
-    background: white;
-    outline-color: rgb(77, 144, 254);
-    outline-offset: -2px;
-    outline-style: auto;
-    outline-width: 5px;
+
+  &__option:not(:last-child) {
+    margin-bottom: rem(26);
   }
 
-  &__options li:focus {
-    outline-color: rgb(77, 144, 254);
-    outline-offset: -2px;
-    outline-style: auto;
-    outline-width: 5px;
+  &__link {
+    text-decoration: none;
+    color: $text-color;
+    font-size: rem(13);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    line-height: 1.54;
+
+    img {
+      margin-right: rem(6);
+      width: rem(18);
+      height: rem(13);
+      pointer-events: none;
+    }
+
+    span {
+      width: rem(20);
+      pointer-events: none;
+    }
   }
 
-  &__option {
-    padding: rem(10) rem(15);
-    z-index: 5;
-    background-color: $white;
-    transition: 0.4s;
+  &__link_status {
+    position: relative;
+    padding-right: rem(15);
+
+    &.opened {
+      &::after {
+        transform: translateY(-50%) rotate(-90deg);
+      }
+    }
+
+    &::after {
+      transition: transform 0.4s;
+      position: absolute;
+      content: '';
+      top: 50%;
+      transform: translateY(-50%) rotate(90deg);
+      right: rem(0);
+      width: rem(6);
+      height: rem(10);
+      background: url("../img/arrow.svg") no-repeat;
+      cursor: pointer;
+    }
   }
 }

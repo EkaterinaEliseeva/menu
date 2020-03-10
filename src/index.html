@@ -14,30 +14,33 @@
         <button id="menu-toggle" class="menu-toggle" aria-label="Open the menu">Open the menu</button>
         <div class="menu hidden">
             <div class="menu__wrapper">
-                <div class="menu__custom-select">
-                    <label for="custom-select-input" class="hidden-visually">Language</label>
-                    <div class="custom-select" action="#">
-                        <form action="#" class="custom-select__form">
-                            <input type="text" id="custom-select-input" class="custom-select__input" value="EN" readonly>
-                            <div class="custom-select__status">
-                                <img src="img/en.svg" alt="">
-                                EN
-                            </div>
-                            <img class="custom-select__button" src="img/arrow.svg" alt="Open">
-                        </form>
-                        <ul class="custom-select__options hidden" id="custom-select-list">
-                            <li class="custom-select__option" tabindex="-1">
-                                <img src="img/ru.svg" alt="RU">
-                                RU</li>
-                            <li class="custom-select__option" tabindex="-1">
-                                <img src="img/en.svg" alt="EN">
-                                EN</li>
-                            <li class="custom-select__option" tabindex="-1">
-                                <img src="img/be.svg" alt="BE">
-                                BE</li>
-                        </ul>
+                <div class="menu__custom-select custom-select">
+                    <div class="custom-select__status">
+                        <a class="custom-select__link custom-select__link_status" href="#">
+                            <img src="img/en.svg" alt="EN">
+                            <span>EN</span>
+                        </a>
                     </div>
-
+                    <ul class="custom-select__options hidden">
+                        <li class="custom-select__option">
+                            <a class="custom-select__link" href="#">
+                                <img src="img/ru.svg" alt="RU">
+                                <span>RU</span>
+                            </a>
+                        </li>
+                        <li class="custom-select__option">
+                            <a class="custom-select__link" href="#">
+                                <img src="img/en.svg" alt="EN">
+                                <span>EN</span>
+                            </a>
+                        </li>
+                        <li class="custom-select__option">
+                            <a class="custom-select__link" href="#">
+                                <img src="img/be.svg" alt="BE">
+                                <span>BE</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
                 <form  action="#" class="search-form">
                     <label for="search-input" class="hidden-visually">Search</label>
@@ -54,8 +57,79 @@
                             <img src="img/arrow.svg" class="navigation__button" alt="Open">
                         </a>
                         <ul class="navigation__submenu hidden">
-                            <li class="navigation__item">
-                                <a href="#" class="navigation__link"></a>
+                            <li class="navigation__submenu-item">
+                                <a href="#" class="navigation__submenu-link">
+                                    <span>Platforms</span>
+                                    <img src="img/arrow.svg" class="navigation__submenu-button" alt="Open">
+                                </a>
+                                <ul class="navigation__submenu-last hidden">
+                                    <li class="navigation__submenu-last-item">
+                                        <a href="#" class="navigation__submenu-last-link">Aws
+                                        </a>
+                                    </li>
+                                    <li class="navigation__submenu-last-item">
+                                        <a href="#" class="navigation__submenu-last-link">GSP
+                                        </a>
+                                    </li>
+                                    <li class="navigation__submenu-last-item">
+                                        <a href="#" class="navigation__submenu-last-link">Azure
+                                        </a>
+                                    </li>
+                                    <li class="navigation__submenu-last-item">
+                                        <a href="#" class="navigation__submenu-last-link">AlibabaCloud
+                                        </a>
+                                    </li>
+                                    <li class="navigation__submenu-last-item">
+                                        <a href="#" class="navigation__submenu-last-link">MTS
+                                        </a>
+                                    </li>
+                                    <li class="navigation__submenu-last-item">
+                                        <a href="#" class="navigation__submenu-last-link">VMWare, KVM
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </li>
+                            <li class="navigation__submenu-item">
+                                <a href="#" class="navigation__submenu-link">
+                                    <span>DevOps</span>
+                                    <img src="img/arrow.svg" class="navigation__submenu-button" alt="Open">
+                                </a>
+                                <ul class="navigation__submenu-last hidden">
+                                    <li class="navigation__submenu-last-item">
+                                        <a href="#" class="navigation__submenu-last-link">Aws
+                                        </a>
+                                    </li>
+                                    <li class="navigation__submenu-last-item">
+                                        <a href="#" class="navigation__submenu-last-link">GSP
+                                        </a>
+                                    </li>
+                                    <li class="navigation__submenu-last-item">
+                                        <a href="#" class="navigation__submenu-last-link">Azure
+                                        </a>
+                                    </li>
+                                    <li class="navigation__submenu-last-item">
+                                        <a href="#" class="navigation__submenu-last-link">AlibabaCloud
+                                        </a>
+                                    </li>
+                                    <li class="navigation__submenu-last-item">
+                                        <a href="#" class="navigation__submenu-last-link">MTS
+                                        </a>
+                                    </li>
+                                    <li class="navigation__submenu-last-item">
+                                        <a href="#" class="navigation__submenu-last-link">VMWare, KVM
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="navigation__submenu-item">
+                                <a href="#" class="navigation__submenu-link">Servers</a>
+                            </li>
+                            <li class="navigation__submenu-item">
+                                <a href="#" class="navigation__submenu-link">Systems</a>
+                            </li>
+                            <li class="navigation__submenu-item">
+                                <a href="#" class="navigation__submenu-link">Applications</a>
                             </li>
                         </ul>
                     </li>
@@ -65,7 +139,8 @@
                         </a>
                         <ul class="navigation__submenu hidden">
                             <li class="navigation__submenu-item">
-                                <a href="#" class="navigation__submenu-link">Platforms
+                                <a href="#" class="navigation__submenu-link">
+                                    <span>Platforms</span>
                                     <img src="img/arrow.svg" class="navigation__submenu-button" alt="Open">
                                 </a>
                                 <ul class="navigation__submenu-last hidden">
@@ -118,8 +193,51 @@
                         </a>
 
                         <ul class="navigation__submenu hidden">
-                            <li class="navigation__item">
-                                <a href="#" class="navigation__link"></a>
+                            <li class="navigation__submenu-item">
+                                <a href="#" class="navigation__submenu-link">
+                                    <span>Platforms</span>
+                                    <img src="img/arrow.svg" class="navigation__submenu-button" alt="Open">
+                                </a>
+                                <ul class="navigation__submenu-last hidden">
+                                    <li class="navigation__submenu-last-item">
+                                        <a href="#" class="navigation__submenu-last-link">Aws
+                                        </a>
+                                    </li>
+                                    <li class="navigation__submenu-last-item">
+                                        <a href="#" class="navigation__submenu-last-link">GSP
+                                        </a>
+                                    </li>
+                                    <li class="navigation__submenu-last-item">
+                                        <a href="#" class="navigation__submenu-last-link">Azure
+                                        </a>
+                                    </li>
+                                    <li class="navigation__submenu-last-item">
+                                        <a href="#" class="navigation__submenu-last-link">AlibabaCloud
+                                        </a>
+                                    </li>
+                                    <li class="navigation__submenu-last-item">
+                                        <a href="#" class="navigation__submenu-last-link">MTS
+                                        </a>
+                                    </li>
+                                    <li class="navigation__submenu-last-item">
+                                        <a href="#" class="navigation__submenu-last-link">VMWare, KVM
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </li>
+                            <li class="navigation__submenu-item">
+                                <a href="#" class="navigation__submenu-link">DevOps
+                                </a>
+                            </li>
+                            <li class="navigation__submenu-item">
+                                <a href="#" class="navigation__submenu-link">Servers</a>
+                            </li>
+                            <li class="navigation__submenu-item">
+                                <a href="#" class="navigation__submenu-link">Systems</a>
+                            </li>
+                            <li class="navigation__submenu-item">
+                                <a href="#" class="navigation__submenu-link">Applications</a>
                             </li>
                         </ul>
                     </li>
@@ -129,8 +247,51 @@
                         </a>
 
                         <ul class="navigation__submenu hidden">
-                            <li class="navigation__item">
-                                <a href="#" class="navigation__link"></a>
+                            <li class="navigation__submenu-item">
+                                <a href="#" class="navigation__submenu-link">
+                                    <span>Platforms</span>
+                                    <img src="img/arrow.svg" class="navigation__submenu-button" alt="Open">
+                                </a>
+                                <ul class="navigation__submenu-last hidden">
+                                    <li class="navigation__submenu-last-item">
+                                        <a href="#" class="navigation__submenu-last-link">Aws
+                                        </a>
+                                    </li>
+                                    <li class="navigation__submenu-last-item">
+                                        <a href="#" class="navigation__submenu-last-link">GSP
+                                        </a>
+                                    </li>
+                                    <li class="navigation__submenu-last-item">
+                                        <a href="#" class="navigation__submenu-last-link">Azure
+                                        </a>
+                                    </li>
+                                    <li class="navigation__submenu-last-item">
+                                        <a href="#" class="navigation__submenu-last-link">AlibabaCloud
+                                        </a>
+                                    </li>
+                                    <li class="navigation__submenu-last-item">
+                                        <a href="#" class="navigation__submenu-last-link">MTS
+                                        </a>
+                                    </li>
+                                    <li class="navigation__submenu-last-item">
+                                        <a href="#" class="navigation__submenu-last-link">VMWare, KVM
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </li>
+                            <li class="navigation__submenu-item">
+                                <a href="#" class="navigation__submenu-link">DevOps
+                                </a>
+                            </li>
+                            <li class="navigation__submenu-item">
+                                <a href="#" class="navigation__submenu-link">Servers</a>
+                            </li>
+                            <li class="navigation__submenu-item">
+                                <a href="#" class="navigation__submenu-link">Systems</a>
+                            </li>
+                            <li class="navigation__submenu-item">
+                                <a href="#" class="navigation__submenu-link">Applications</a>
                             </li>
                         </ul>
                     </li>
@@ -149,8 +310,6 @@
     </main>
     <footer>
     </footer>
-    <script src="js/custom-select.js"></script>
-    <script src="js/menu.js"></script>
     <script src="js/index.js"></script>
 </body>
 </html>

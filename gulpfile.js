@@ -8,6 +8,8 @@ const plumber = require('gulp-plumber');
 const autoprefixer = require('autoprefixer');
 const copy = require('gulp-copy');
 const babel = require('gulp-babel');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
 
 gulp.task("clean", function () {
     return del("build");
@@ -52,6 +54,8 @@ gulp.task('js', function() {
         .pipe(babel({
             presets: ['@babel/env']
         }))
+        .pipe(concat('index.js'))
+        .pipe(uglify())
         .pipe(gulp.dest("build/js"))
 });
 

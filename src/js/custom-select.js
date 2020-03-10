@@ -1,27 +1,32 @@
-const toggleForm = document.querySelector('.custom-select__form');
+const toggle = document.querySelector('.custom-select__link_status');
 const optionsBlock = document.querySelector('.custom-select__options');
 const options = document.querySelectorAll('.custom-select__option');
 const selectOption = document.querySelector('.custom-select__status');
-const input = document.querySelector('.custom-select__input');
 
-const closeOptionsBlockHandler = (evt) => {
-    if (evt.target !== optionsBlock && evt.target.parentsNode !== optionsBlock) {
-        optionsBlock.classList.toggle('hidden');
-        document.removeEventListener('click', closeOptionsBlockHandler);
-    }
+const changeHiddenOption = () => {
+    options.forEach(option => {
+        if (option.querySelector('span').textContent === selectOption.querySelector('span').textContent) {
+            option.classList.add('hidden');
+        } else {
+            option.classList.remove('hidden');
+        }
+    });
 };
 
-toggleForm.addEventListener('click', (evt)=> {
+changeHiddenOption();
+
+toggle.addEventListener('click', (evt)=> {
     evt.preventDefault();
 
     optionsBlock.classList.toggle('hidden');
+    toggle.classList.toggle('opened');
 
     options.forEach((option) => {
         option.addEventListener('click', (evt) => {
-            selectOption.innerHTML = evt.target.innerHTML;
-            input.setAttribute('value', evt.target.textContent.trim());
 
-            document.addEventListener('click', closeOptionsBlockHandler);
+            toggle.innerHTML = evt.target.innerHTML;
+
+            changeHiddenOption();
         });
     });
 

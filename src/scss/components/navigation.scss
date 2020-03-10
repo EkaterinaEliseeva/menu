@@ -15,6 +15,7 @@
 
   &__item {
     border-bottom: rem(1) solid $border-color;
+    border-top: rem(1) solid transparent;
 
     &:first-child {
       border-top: rem(1) solid $border-color;
@@ -24,11 +25,22 @@
       height: 100%;
       width: 100%;
       border: none;
+      position: relative;
 
       .navigation__button {
         position: absolute;
         transform: rotate(180deg);
         left: 0;
+      }
+
+      &::after {
+        position: absolute;
+        content: '';
+        top: rem(48);
+        left: 0;
+        width: 100%;
+        height: rem(1);
+        background: $border-color;
       }
     }
   }
@@ -36,7 +48,7 @@
   &__button {
     padding: 0;
     width: rem(6);
-    height: rem(9);
+    height: rem(10);
     background-color: $white;
     cursor: pointer;
   }
@@ -44,7 +56,8 @@
   &__link {
     text-decoration: none;
     color: $text-color;
-    padding: rem(15);
+    padding: rem(14);
+    line-height: rem(20);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -58,6 +71,7 @@
     font-size: rem(15);
     line-height: rem(18);
     animation: apperanceLeft 0.4s;
+    margin-top: rem(15);
 
     &-item.active {
       .navigation__submenu-button {
@@ -65,10 +79,15 @@
       }
     }
 
+    span {
+      margin-right: rem(10);
+      pointer-events: none;
+    }
+
     &-button {
-      margin-left: rem(10);
+      transition: transform 0.2s;
       width: rem(6);
-      height: rem(9);
+      height: rem(10);
       transform: rotate(90deg);
       cursor: pointer;
     }
